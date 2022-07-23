@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./WeatherForecast.css";
+import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
-export default function WeatherForecast() {
+export default function WeatherForecast(props) {
   return (
     <div className="WeatherForecast">
-      <h3>Forecasts</h3>
+      <div className="row">
+        <div className="col">
+          <WeatherForecastDay />
+        </div>
+      </div>
     </div>
   );
 }
