@@ -1,21 +1,15 @@
 import "./App.css";
+import React from "react";
+import Weather from "./Weather";
+import Footer from "./Footer";
+
+export default App;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Weather Search</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Weather />
+      <Footer />
     </div>
   );
 }
-
-export default App;
