@@ -41,7 +41,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -49,6 +49,7 @@ export default function Weather(props) {
                 placeholder="Enter a city..."
                 className="form-control"
                 autoFocus="on"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -60,8 +61,8 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo />
-        <WeatherForecast />
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinated={weatherData.coordinates} />
       </div>
     );
   } else {
