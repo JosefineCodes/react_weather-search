@@ -27,20 +27,32 @@
 }
 
 .Weather .temperature {
-  font-weight: bold;
-  color: #113951;
+  color: #28536c;
   font-size: 60px;
-  font-weight: 400;
+
   line-height: 64px;
   margin-left: 10px;
 }
 .Weather .unit {
   color: black;
   font-size: 16px;
+  font-weight: bold;
+
   position: relative;
   line-height: 1;
   top: -30px;
   margin-left: 4px;
+}
+
+.unit-link {
+  color: #6f8fa3;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.unit-link:hover {
+  color: #477087;
+  text-decoration: none;
 }
 
 .Weather .btn-primary {
@@ -53,10 +65,33 @@
 .btn-primary:focus {
   background-color: #477087 !important;
   border-color: #477087 !important;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6f8fa3 !important;
+  box-shadow: none !important;
 }
 
 .Weather .form-control:focus {
   border-color: #6f8fa3;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6f8fa3;
+}
+
+.Weather button.geolocation {
+  color: #6f8fa3;
+  background: none;
+  border: none !important;
+  font-size: 35px;
+  top: -8px;
+  left: 4px;
+  width: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.Weather button.geolocation:hover,
+.Weather button.geolocation:focus,
+.Weather button.geolocation:active {
+  color: #477087;
+  background: none;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }

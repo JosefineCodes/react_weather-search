@@ -5,6 +5,8 @@ import axios from "axios";
 import Api from "./Api";
 import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -71,12 +73,9 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-2">
-              <input
-                type="submit"
-                value=""
-                className="btn btn-outline-primary w-80"
-                onClick={getLocation}
-              />
+              <button className="geolocation">
+                <FontAwesomeIcon icon={faMapMarkerAlt} onClick={getLocation} />
+              </button>
             </div>
           </div>
         </form>
