@@ -28,6 +28,11 @@ export default function Weather(props) {
     axios.get(url).then(handleResponse);
   }
 
+  const searchCurrentLocation = (position) => {
+    let url = `${Api.url}/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${Api.key}&units=metric`;
+    axios.get(url).then(handleResponse);
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -37,6 +42,11 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  const getLocation = (event) => {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+  };
+
   if (weatherData.ready) {
     //
 
@@ -44,7 +54,7 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-8">
               <input
                 type="search"
                 placeholder="Enter a city..."
@@ -53,11 +63,19 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-3">
+            <div className="col-2">
               <input
                 type="submit"
                 value="Search"
                 className="btn btn-primary w-100"
+              />
+            </div>
+            <div className="col-2">
+              <input
+                type="submit"
+                value=""
+                className="btn btn-outline-primary w-80"
+                onClick={getLocation}
               />
             </div>
           </div>
