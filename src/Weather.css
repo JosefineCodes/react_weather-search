@@ -1,6 +1,6 @@
 .Weather {
   border: 1px solid #dadde1;
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   padding: 16px;
   border-radius: 4px;
   color: grey;
